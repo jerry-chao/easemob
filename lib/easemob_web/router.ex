@@ -18,6 +18,8 @@ defmodule EasemobWeb.Router do
     pipe_through :api
 
     resources "/private", PrivateController, except: [:new, :edit]
+
+    post "/postcallback", CallbackController, :postcallback
   end
 
   scope "/", EasemobWeb do

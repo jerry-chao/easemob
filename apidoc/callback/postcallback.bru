@@ -1,0 +1,39 @@
+meta {
+  name: postcallback
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://{{host}}:{{port}}/api/postcallback
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "callId": "1145230613161200#demo_d210f8f50bf7415d9e4dd73496e14297",
+      "timestamp": 1694398161077,
+      "chat_type": "chat",
+      "from": "143837689",
+      "to": "n___7717166",
+      "msg_id": "1188990232259724759",
+      "payload": {
+          "bodies": [
+              {
+                  "msg": "喜马拉雅造山运动由来",
+                  "type": "txt"
+              }
+          ],
+          "ext": {
+              "version": 2
+          },
+          "from": "143837689",
+          "meta": {},
+          "to": "n___7717166",
+          "type": "chat"
+      },
+      "security": "d8e48d9495a0a0eb6878c4435102e9e2",
+      "app_id": "com.mixhx"
+  }
+}
