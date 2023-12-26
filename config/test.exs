@@ -7,8 +7,8 @@ import Config
 # Run `mix help test` for more information.
 config :easemob, Easemob.Repo,
   username: "root",
-  password: "",
-  hostname: "localhost",
+  password: "123456",
+  hostname: "mysql",
   database: "easemob_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
@@ -16,7 +16,7 @@ config :easemob, Easemob.Repo,
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :easemob, EasemobWeb.Endpoint,
-  http: [ip: {127, 0, 0, 1}, port: 4002],
+  http: [ip: {0, 0, 0, 0}, port: 4002],
   secret_key_base: "A1ZdDMuDk1NwbyGnMOLlGwGekgttzRSsIK2Ao0vrYHa8ObGzCnnoZMgNMAGS5z8e",
   server: false
 

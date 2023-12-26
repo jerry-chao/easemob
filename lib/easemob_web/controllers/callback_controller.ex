@@ -3,8 +3,8 @@ defmodule EasemobWeb.CallbackController do
 
   action_fallback EasemobWeb.FallbackController
 
-  def postcallback(conn, _params) do
-    json(conn, %{"status" => "ok"})
+  def postcallback(conn, params) do
+    json(conn, %{valid: true, data: params})
   end
 
 end
