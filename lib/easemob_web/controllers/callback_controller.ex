@@ -1,10 +1,13 @@
 defmodule EasemobWeb.CallbackController do
   use EasemobWeb, :controller
 
+  alias Easemob.Messages
+
   action_fallback EasemobWeb.FallbackController
 
   def postcallback(conn, params) do
-    json(conn, %{valid: true, data: params})
+    Messages.send(params)
+    json(conn, %{valid: true})
   end
 
 end

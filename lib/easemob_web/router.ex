@@ -19,7 +19,7 @@ defmodule EasemobWeb.Router do
 
     resources "/private", PrivateController, except: [:new, :edit]
 
-    post "/postcallback", CallbackController, :postcallback
+    post "/postcallback/:dc", CallbackController, :postcallback
   end
 
   scope "/", EasemobWeb do
