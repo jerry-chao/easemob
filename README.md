@@ -37,13 +37,10 @@
 - GroupMetaData：群组的元数据信息
 
 ### 发送消息
-	- 核心过程如下所示
-		- app1_1_tom发送消息给app1_2_alice的账号
-		  logseq.order-list-type:: number
-		- 通过配置的发送前回调，appServer1接收到该消息，判断该消息为跨应用的消息
-		  logseq.order-list-type:: number
-		- appServer1将消息直接转发给hx2的服务，信息修改为app2_1_tom发送给app2_2_alice的消息
-		  logseq.order-list-type:: number
+- 核心过程如下所示
+  - app1_1_tom发送消息给app1_2_alice的账号
+  - 通过配置的发送前回调，appServer1接收到该消息，判断该消息为跨应用的消息
+  - appServer1将消息直接转发给hx2的服务，信息修改为app2_1_tom发送给app2_2_alice的消息
 
 ### 添加好友
 - 核心过程如下所示
