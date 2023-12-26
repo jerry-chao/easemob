@@ -103,8 +103,9 @@ defmodule Easemob.Messages do
   end
 
   def send(message) do
-    dc = Map.fetch!(message, "dc") |> String.to_atom()
     [bodies] = message["payload"]["bodies"]
+    [dc|_] = message["to"] |> String.split("_")
+    dc = String.to_atom(dc)
 
     data = %{
       from: message["from"],

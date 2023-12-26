@@ -1,11 +1,11 @@
 meta {
-  name: postcallback
+  name: postcallbackDc1
   type: http
-  seq: 1
+  seq: 2
 }
 
 post {
-  url: http://{{host}}:{{port}}/api/postcallback/demo
+  url: http://{{host}}:{{port}}/api/postcallback/ebsapp2
   body: json
   auth: none
 }
@@ -15,8 +15,8 @@ body:json {
       "callId": "1145230613161200#demo_d210f8f50bf7415d9e4dd73496e14297",
       "timestamp": 1694398161077,
       "chat_type": "chat",
-      "from": "demo_tom",
-      "to": "ebsapp2_marry",
+      "from": "ebsapp2_marry",
+      "to": "demo_tom",
       "msg_id": "1188990232259724759",
       "payload": {
           "bodies": [
@@ -28,9 +28,9 @@ body:json {
           "ext": {
               "version": 2
           },
-          "from": "demo_tom",
+          "from": "ebsapp2_marry",
           "meta": {},
-          "to": "ebsapp2_marry",
+          "to": "demo_tom",
           "type": "chat"
       },
       "security": "d8e48d9495a0a0eb6878c4435102e9e2",
