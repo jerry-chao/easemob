@@ -1,0 +1,21 @@
+meta {
+  name: addPrivate
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://{{host}}:{{port}}/api/private
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "private": {
+          "from": "ebs1_tom",
+          "to": "ebs2_marry",
+          "message": "this is test content"
+      }
+  }
+}

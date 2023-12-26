@@ -14,6 +14,12 @@ defmodule EasemobWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", EasemobWeb do
+    pipe_through :api
+
+    resources "/private", PrivateController, except: [:new, :edit]
+  end
+
   scope "/", EasemobWeb do
     pipe_through :browser
 
