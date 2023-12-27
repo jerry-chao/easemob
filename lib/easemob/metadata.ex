@@ -34,11 +34,11 @@ defmodule Easemob.Metadata do
   def update_meta(params) do
     dc = Map.fetch!(params, "dc") |> String.to_atom()
     opts = Application.get_env(:easemob, dc)
-    IO.puts("request metadata dc #{dc}, applicatin #{inspect(opts)}, userid #{inspect(params)}")
+    IO.puts("request metadata dc #{dc}, applicatin #{inspect(opts)}, params #{inspect(params)}")
 
     token = Hx.app_token(dc)
 
-    data = %{"avatarurl" => "https://www.easemob.com/avatar.png", "nick" => "北京Tom"}
+    data = Enum.filter(params, fn {key, _value} -> key == "avatarurl" || key == "nick" end)
     urlencoded_body = URI.encode_query(data)
 
     request =
