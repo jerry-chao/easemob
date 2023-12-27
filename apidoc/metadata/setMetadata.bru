@@ -1,0 +1,20 @@
+meta {
+  name: setMetadata
+  type: http
+  seq: 1
+}
+
+put {
+  url: http://{{host}}:{{port}}/api/metadata/{{dc}}/{{username}}
+  body: formUrlEncoded
+  auth: none
+}
+
+headers {
+  Content-Type: application/x-www-form-urlencoded
+}
+
+body:form-urlencoded {
+  avatarurl: https://www.easemob.com/avatar.png
+  nick: 北京tom
+}

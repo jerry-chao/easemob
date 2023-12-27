@@ -20,6 +20,9 @@ defmodule EasemobWeb.Router do
     resources "/private", PrivateController, except: [:new, :edit]
 
     post "/postcallback/:dc", CallbackController, :postcallback
+
+    put "/metadata/:dc/:userid", MetadataController, :update
+    get "/metadata/:dc/:userid", MetadataController, :get
   end
 
   scope "/", EasemobWeb do

@@ -1,0 +1,15 @@
+meta {
+  name: getMetadata
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://{{host}}:{{port}}/api/metadata/{{dc}}/{{username}}
+  body: formUrlEncoded
+  auth: none
+}
+
+headers {
+  Content-Type: application/x-www-form-urlencoded
+}
