@@ -38,7 +38,7 @@ defmodule Easemob.Metadata do
 
     token = Hx.app_token(dc)
 
-    data = Enum.filter(params, fn {key, _value} -> key == "avatarurl" || key == "nick" end)
+    data = Enum.filter(params, fn {key, _value} -> key == "avatarurl" || key == "nickname" end)
     urlencoded_body = URI.encode_query(data)
 
     request =
