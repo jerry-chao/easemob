@@ -1,6 +1,6 @@
-## 单聊消息的打通
+## 群聊消息的打通
 
-![单聊消息](./img/msg_transfer.png)
+![群聊消息](./img/msg_transfer.png)
 
 目标： 数据中心1的用户能够跟用户中心2的账号完成一对一的消息通信
 
@@ -38,44 +38,4 @@ userId: dc1_tom, dc2_marry
 ```
 appkey: ${org_name}#${app_name}_${dc}
 userid: ${dc}_${userid}
-```
-
-
-### 代码示例
-
-```elixir
-  def send(message) do
-    [bodies] = message["payload"]["bodies"]
-    [dc|_] = message["to"] |> String.split("_")
-    dc = String.to_atom(dc)
-
-    data = %{
-      from: message["from"],
-      to: message["to"],
-      type: bodies["type"],
-      body: %{
-        msg: bodies["msg"]
-      }
-    }
-
-    opts = Application.get_env(:easemob, dc)
-    IO.puts("send dc #{dc}, data #{inspect(data)}, applicatin #{inspect(opts)}")
-
-    token = Hx.app_token(dc)
-
-    request =
-      Finch.build(
-        :post,
-        "#{opts.base_url}/#{opts.org_name}/#{opts.app_name}/messages/users",
-        [
-          {"Content-Type", "application/json"},
-          {"Accept", "application/json"},
-          {"Authorization", "Bearer #{token}"}
-        ],
-        Jason.encode!(data)
-      )
-
-    response = Finch.request(request, Easemob.Finch)
-    IO.puts("response #{inspect(response)}")
-  end
 ```
