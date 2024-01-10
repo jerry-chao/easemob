@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  mysql:
+    container_name: mysql
+    platform: linux/x86_64
+    image: mysql:5.7
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: easemob
+    volumes:
+      - ./database_schema.sql:/docker-entrypoint-initdb.d/mysql.sql
+    ports:
+      - '3306:3306'
