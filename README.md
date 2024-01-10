@@ -72,3 +72,6 @@
 ## 说明
 
 [客户端](https://github.com/jerry-chao/webim) 客户端有部分的逻辑调整可以查看这个repo
+
+[demo](http://106.75.214.248:8081) demo的地址，互通里面的app1的地址 账号是 demo_tom 密码 asd
+[ebsapp2](http://106.75.214.248:8082) ebsapp2的地址，互通里面的app2的地址 账号是 ebsapp2_marry 密码 asd
