@@ -105,7 +105,7 @@ defmodule Easemob.Messages do
 
   def send(message) do
     [bodies] = message["payload"]["bodies"]
-    [dc|_] = message["to"] |> String.split("_")
+    [dc | _] = message["to"] |> String.split("_")
     dc = String.to_atom(dc)
 
     data = %{
@@ -137,5 +137,4 @@ defmodule Easemob.Messages do
     response = Finch.request(request, Easemob.Finch)
     IO.puts("response #{inspect(response)}")
   end
-
 end
